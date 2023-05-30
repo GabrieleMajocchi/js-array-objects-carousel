@@ -73,8 +73,8 @@ function next(){
 for(let b=0 ; b<images.length ;b++){
 const dot = document.querySelector('#dot'+b);
 dot.addEventListener('click', function(){
-    addactive(b);
     removeactive();
+    addactive(b);
 })};
 
 // ---Adding timed function---
