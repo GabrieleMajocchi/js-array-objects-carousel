@@ -75,6 +75,7 @@ const dot = document.querySelector('#dot'+b);
 dot.addEventListener('click', function(){
     removeactive();
     addactive(b);
+    activeIndex = b;
 })};
 
 // ---Adding timed function---
