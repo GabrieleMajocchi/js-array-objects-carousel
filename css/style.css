@@ -116,3 +116,22 @@ div.dots{
 div.dots.active{
     background-color: rgb(63, 62, 62);
 }
+
+div.play{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: -2.3rem;
+    left: 1.1rem;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    padding: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.507);
+}
+
+div.play > i{
+    font-size: 15px;
+    margin: 0 0.2rem;
+    color: white;
+    cursor: pointer;
+}
