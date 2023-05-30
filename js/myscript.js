@@ -23,6 +23,8 @@ const images = [
 ];
 
 const carouselGroup = document.querySelector('div.carousel');
+const cazzo = document.querySelector('div.carousel div.dot');
+console.log(cazzo)
 
 let activeIndex = 0;
 let i = 0;
@@ -39,11 +41,15 @@ images.forEach(element => {
         i++;
     });
 
+
+
 document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
 
 const prevButton = document.querySelector('div.previous-button');
 prevButton.addEventListener('click', function(){
     document.querySelector('div.carousel-item.active').classList.remove('active')
+    document.querySelector('div.dots.active').classList.remove('active')
 
     if (activeIndex == 0 ) {
         activeIndex = images.length - 1;
@@ -52,11 +58,14 @@ prevButton.addEventListener('click', function(){
     }
 
     document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+    document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+
 });
 
 const nextButton = document.querySelector('div.next-button');
 nextButton.addEventListener('click', function(){
     document.querySelector('div.carousel-item.active').classList.remove('active')
+    document.querySelector('div.dots.active').classList.remove('active')
 
     if (activeIndex == images.length - 1 ) {
         activeIndex = 0;
@@ -64,8 +73,8 @@ nextButton.addEventListener('click', function(){
         activeIndex = activeIndex + 1;
     }
 
-    activeIndex2 = 0;
-
     document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+    document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+
 });
 
