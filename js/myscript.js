@@ -44,37 +44,36 @@ images.forEach(element => {
 document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
 document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
 
+
 const prevButton = document.querySelector('div.previous-button');
-prevButton.addEventListener('click', function(){
-    document.querySelector('div.carousel-item.active').classList.remove('active')
-    document.querySelector('div.dots.active').classList.remove('active')
+prevButton.addEventListener('click', previous);
 
-    if (activeIndex == 0 ) {
-        activeIndex = images.length - 1;
-    } else {
-        activeIndex = activeIndex - 1;
-    }
-
-    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
-    document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
-
-});
+function previous(){
+document.querySelector('div.carousel-item.active').classList.remove('active');
+document.querySelector('div.dots.active').classList.remove('active');
+if (activeIndex == 0 ) {
+    activeIndex = images.length - 1;
+} else {
+    activeIndex = activeIndex - 1;
+}
+document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+};
 
 const nextButton = document.querySelector('div.next-button');
-nextButton.addEventListener('click', function(){
-    document.querySelector('div.carousel-item.active').classList.remove('active')
-    document.querySelector('div.dots.active').classList.remove('active')
+nextButton.addEventListener('click', next);
 
-    if (activeIndex == images.length - 1 ) {
-        activeIndex = 0;
-    } else {
-        activeIndex = activeIndex + 1;
-    }
-
-    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
-    document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
-
-});
+function next(){
+document.querySelector('div.carousel-item.active').classList.remove('active');
+document.querySelector('div.dots.active').classList.remove('active');
+if (activeIndex == images.length - 1 ) {
+    activeIndex = 0;
+} else {
+    activeIndex = activeIndex + 1;
+}
+document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+};
 
 for(let b=0 ; b<images.length ;b++){
 const dot = document.querySelector('#dot'+b);
@@ -82,8 +81,11 @@ dot.addEventListener('click', function(){
     dotchooser(b);
 })};
 
+const timer = setInterval (next, 3000);
 
-
+// --------------
+// ---Function---
+// --------------
 
 function dotchooser(index){
     activeIndex = index;
