@@ -22,3 +22,50 @@ const images = [
     }
 ];
 
+const carouselGroup = document.querySelector('div.carousel');
+
+let activeIndex = 0;
+let i = 0;
+
+images.forEach(element => {
+        carouselGroup.innerHTML +=
+        `<div class="carousel-item ${i}">
+            <img src="./${element.image}" alt="Carousel slide image">
+            <div>
+                <h4>${element.title}</h4>
+                <p>${element.text}</p>
+            </div>
+        </div>`;
+        i++;
+    });
+
+document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+
+const prevButton = document.querySelector('div.previous-button');
+prevButton.addEventListener('click', function(){
+    document.querySelector('div.carousel-item.active').classList.remove('active')
+
+    if (activeIndex == 0 ) {
+        activeIndex = images.length - 1;
+    } else {
+        activeIndex = activeIndex - 1;
+    }
+
+    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+});
+
+const nextButton = document.querySelector('div.next-button');
+nextButton.addEventListener('click', function(){
+    document.querySelector('div.carousel-item.active').classList.remove('active')
+
+    if (activeIndex == images.length - 1 ) {
+        activeIndex = 0;
+    } else {
+        activeIndex = activeIndex + 1;
+    }
+
+    activeIndex2 = 0;
+
+    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+});
+
