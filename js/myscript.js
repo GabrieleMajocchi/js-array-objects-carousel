@@ -89,6 +89,7 @@ stop.addEventListener('click', function(){
 // ---Adding play to timed function---
 const play = document.querySelector('.fa-play');
 play.addEventListener('click', function(){
+    clearInterval(timer);
     timer = setInterval (next, 3000);
 });
 
