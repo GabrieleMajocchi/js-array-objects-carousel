@@ -1,3 +1,4 @@
+// ---Create the array---
 const images = [
     {
         image: 'img/01.webp',
@@ -23,74 +24,79 @@ const images = [
 ];
 
 const carouselGroup = document.querySelector('div.carousel');
-
 let activeIndex = 0;
 let i = 0;
 
+// ---Adding various slide with elements---
 images.forEach(element => {
-        carouselGroup.innerHTML +=
-        `<div class="carousel-item ${i}">
-            <img src="./${element.image}" alt="Carousel slide image">
-            <div>
-                <h4>${element.title}</h4>
-                <p>${element.text}</p>
-            </div>
-        </div>`;
-        i++;
-    });
+    carouselGroup.innerHTML +=
+    `<div class="carousel-item ${i}">
+        <img src="./${element.image}" alt="Carousel slide image">
+        <div>
+            <h4>${element.title}</h4>
+            <p>${element.text}</p>
+        </div>
+    </div>`;
+    i++;
+});
 
+// ---Adding active based on current slide---
+addactive(activeIndex);
 
-
-document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
-document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
-
-
+// ---Adding function to go to the previous slide---
 const prevButton = document.querySelector('div.previous-button');
 prevButton.addEventListener('click', previous);
-
 function previous(){
-document.querySelector('div.carousel-item.active').classList.remove('active');
-document.querySelector('div.dots.active').classList.remove('active');
-if (activeIndex == 0 ) {
-    activeIndex = images.length - 1;
-} else {
-    activeIndex = activeIndex - 1;
-}
-document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
-document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+    removeactive();
+    if (activeIndex == 0 ) {
+        activeIndex = images.length - 1;
+    } else {
+        activeIndex = activeIndex - 1;
+    }
+    addactive(activeIndex);
 };
 
+// ---Adding function to go to the next slide---
 const nextButton = document.querySelector('div.next-button');
 nextButton.addEventListener('click', next);
-
 function next(){
-document.querySelector('div.carousel-item.active').classList.remove('active');
-document.querySelector('div.dots.active').classList.remove('active');
-if (activeIndex == images.length - 1 ) {
-    activeIndex = 0;
-} else {
-    activeIndex = activeIndex + 1;
-}
-document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
-document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+    removeactive();
+    if (activeIndex == images.length - 1 ) {
+        activeIndex = 0;
+    } else {
+        activeIndex = activeIndex + 1;
+    }
+    addactive(activeIndex);
 };
 
+// ---Adding function to select slide clicking dots---
 for(let b=0 ; b<images.length ;b++){
 const dot = document.querySelector('#dot'+b);
 dot.addEventListener('click', function(){
-    dotchooser(b);
+    addactive(b);
+    removeactive();
 })};
 
+// ---Adding timed function---
 const timer = setInterval (next, 3000);
 
 // --------------
 // ---Function---
 // --------------
 
-function dotchooser(index){
-    activeIndex = index;
-    document.querySelector('div.carousel-item.active').classList.remove('active')
-    document.querySelector('div.dots.active').classList.remove('active')
-    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
-    document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+/**
+ * Activate the selected index in the slider
+ * @param {number} index number of current index to activate
+ */
+function addactive(index){
+    document.querySelectorAll('div.carousel-item')[index].classList.add('active');
+    document.querySelectorAll('div.dots')[index].classList.add('active');
+}
+
+/**
+ * Remove active state from the slider
+ */
+function removeactive(){
+    document.querySelector('div.carousel-item.active').classList.remove('active');
+    document.querySelector('div.dots.active').classList.remove('active');
 }
