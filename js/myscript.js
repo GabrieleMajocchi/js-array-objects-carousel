@@ -1,25 +1,25 @@
 // ---Create the array---
 const images = [
     {
-        image: 'img/01.webp',
-        title: 'Marvel\'s Spiderman Miles Morale',
-        text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
+        image: 'img/01.jpg',
+        title: 'Monte Everest',
+        text: "L'Everest è la montagna più alta del mondo, situata nella catena dell'Himalaya, al confine tra il Nepal e il Tibet. Con un'altitudine di 8.848 metri, è una delle sfide più ambite per gli alpinisti di tutto il mondo. La sua maestosità e la sua bellezza lo rendono un'icona dell'avventura e della conquista umana.",
     }, {
-        image: 'img/02.webp',
-        title: 'Ratchet & Clank: Rift Apart',
-        text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
+        image: 'img/02.jpg',
+        title: 'Monte Kilimanjaro',
+        text: "Il Kilimanjaro è il punto più elevato dell'Africa, situato in Tanzania. Nonostante la sua altitudine relativamente modesta di 5.895 metri, il Kilimanjaro è famoso per la sua imponente sagoma solitaria che emerge dalle pianure circostanti. È anche uno dei pochi luoghi al mondo dove è possibile trovare neve e ghiaccio vicino all'equatore.",
     }, {
-        image: 'img/03.webp',
-        title: 'Fortnite',
-        text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+        image: 'img/03.jpg',
+        title: 'Monte McKinley (Denali)',
+        text: "Il Monte McKinley, noto anche come Denali, si trova in Alaska, negli Stati Uniti. Con i suoi 6.190 metri, è la montagna più alta del Nord America. Il Denali è caratterizzato da pareti rocciose verticali e da enormi ghiacciai, che rappresentano una sfida formidabile per gli scalatori. La sua bellezza selvaggia e remota attira numerosi avventurieri da tutto il mondo.",
     }, {
-        image: 'img/04.webp',
-        title: 'Stray',
-        text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
+        image: 'img/04.jpg',
+        title: 'Mont Blanc',
+        text: "Il Mont Blanc è la montagna più alta delle Alpi, con un'altitudine di 4.809 metri. Situato al confine tra Francia e Italia, offre panorami spettacolari e una grande varietà di percorsi per gli appassionati di escursionismo e scalata. La sua fama e l'accessibilità relativa lo rendono una delle mete più popolari per gli amanti della montagna in Europa.",
     }, {
-        image: 'img/05.webp',
-        title: "Marvel's Avengers",
-        text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
+        image: 'img/05.jpg',
+        title: "Monte Fuji",
+        text: "Il Monte Fuji è un'icona nazionale del Giappone e uno dei vulcani più famosi al mondo. Situato a circa 100 chilometri a sud-ovest di Tokyo, il Fuji si innalza fino a un'altitudine di 3.776 metri. La sua forma conica perfetta, le foreste rigogliose e i laghi pittoreschi attirano visitatori e artisti da secoli. È anche una meta molto popolare per gli escursionisti che vogliono raggiungere la sua cima e ammirare l'alba spettacolare.",
     }
 ];
 
