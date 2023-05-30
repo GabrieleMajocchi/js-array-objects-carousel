@@ -23,8 +23,6 @@ const images = [
 ];
 
 const carouselGroup = document.querySelector('div.carousel');
-const cazzo = document.querySelector('div.carousel div.dot');
-console.log(cazzo)
 
 let activeIndex = 0;
 let i = 0;
@@ -78,3 +76,19 @@ nextButton.addEventListener('click', function(){
 
 });
 
+for(let b=0 ; b<images.length ;b++){
+const dot = document.querySelector('#dot'+b);
+dot.addEventListener('click', function(){
+    dotchooser(b);
+})};
+
+
+
+
+function dotchooser(index){
+    activeIndex = index;
+    document.querySelector('div.carousel-item.active').classList.remove('active')
+    document.querySelector('div.dots.active').classList.remove('active')
+    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+    document.querySelectorAll('div.dots')[activeIndex].classList.add('active');
+}
